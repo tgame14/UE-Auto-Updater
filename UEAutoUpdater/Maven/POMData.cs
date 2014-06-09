@@ -10,9 +10,10 @@ namespace UEAutoUpdater.Maven
     {
         public string groupId { get; set; }
         public string name { get; set; }
+        public string version { get; set; }
+        public string classifier { get; set; }
 
-
-        public void test ()
+        public POMData(string groupId, string name, string version, string classifier)
         {
 
         }
