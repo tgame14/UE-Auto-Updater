@@ -13,6 +13,8 @@ namespace UEAutoUpdater
     {
         // Required Args! maven repo name download! invoke from modstats. use ; to separate.
         // Example: Resonant-Engine-Development;ICBM-Development;Resonant-Induction-Development (as args)
+        // Also required a 3rd field! the path to mods folder
+        // Example Invokation: UEAutoUpdater.cs Resonant-Induction; http://calclavia.com/maven C:/mods
         static void Main(string[] args)
         {
             if (args.Length < 2)
