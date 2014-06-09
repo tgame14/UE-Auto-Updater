@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace UEAutoUpdater
 {
-    class Program
+    class ModContainer
     {
-        static void Main(string[] args)
-        {
-        }
+
     }
 }
