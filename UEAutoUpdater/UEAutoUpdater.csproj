@@ -46,8 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FileManager.cs" />
     <Compile Include="Maven\POMData.cs" />
-    <Compile Include="ModContainer.cs" />
     <Compile Include="Maven\MavenHandler.cs" />
     <Compile Include="UEAutoUpdater.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

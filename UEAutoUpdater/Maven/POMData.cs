@@ -15,7 +15,18 @@ namespace UEAutoUpdater.Maven
 
         public POMData(string groupId, string name, string version, string classifier)
         {
+            this.groupId = groupId;
+            this.name = name;
+            this.version = version;
+            this.classifier = classifier;
+        }
 
+        public POMData(string groupId, string name)
+        {
+            this.groupId = groupId;
+            this.name = name;
+            this.version = null;
+            this.classifier = null;
         }
         
     }

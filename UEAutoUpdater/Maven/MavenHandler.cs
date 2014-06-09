@@ -8,14 +8,13 @@ namespace UEAutoUpdater.Maven
 {
     class MavenHandler
     {
-        public string repoUrl;
-        private IList<string> reposToGrab;
+        private POMData repoData;
+        private string repo;
+        
 
-        public MavenHandler(IList<string> mavenNamesToGrab, string repo)
+        public MavenHandler(POMData mavenData, string repo)
         {
-            this.reposToGrab = mavenNamesToGrab;
-            this.repoUrl = repo;
-
+            this.repoData = mavenData;
         }
     }
 }

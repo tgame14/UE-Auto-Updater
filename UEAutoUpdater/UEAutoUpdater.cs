@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 using UEAutoUpdater.Maven;
 
 namespace UEAutoUpdater
@@ -19,14 +20,33 @@ namespace UEAutoUpdater
 
             Console.WriteLine("UE-Auto-Updater Invoked, Grabbing files from maven server now.");
             IList<string> filesToGrab = (IList<string>) new List<string>(args[0].Split(';'));
+            Console.WriteLine("Accepted mods to auto-update. Deleting old files and redownloading");
             for (int i = 0; i < filesToGrab.Count(); i++)
             {
                 Console.WriteLine(filesToGrab[i]);
             }
+            
+            Console.WriteLine("Downloading Files, Executing Secondary thread to delete and download files:");
+            
+            FileManager manager = new FileManager();
+            Thread oThread = new Thread(new ThreadStart(manager.ThreadStart));
+
+            oThread.Start();
+
+            var restrictor = 1;
+            while (!oThread.IsAlive)
+            {
+                if (restrictor <= 0)
+                { 
+                    Console.Write('.');
+                    restrictor = 10;
+                }
+                restrictor--;
+            }
+
+            Thread.Sleep(1);
+
             Console.ReadKey();
-
-            MavenHandler mavenHandler = new MavenHandler(filesToGrab, args[1]);
-
         }
     }
 }

@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace UEAutoUpdater
 {
-    class ModContainer
+    class FileManager
     {
+        public void ThreadStart()
+        {
+            Console.WriteLine("FileManager thread is now Running");
+        }
 
     }
 }
