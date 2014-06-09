@@ -33,15 +33,9 @@ namespace UEAutoUpdater
 
             oThread.Start();
 
-            var restrictor = 1;
             while (!oThread.IsAlive)
             {
-                if (restrictor <= 0)
-                { 
-                    Console.Write('.');
-                    restrictor = 10;
-                }
-                restrictor--;
+                Console.Write('.');
             }
 
             Thread.Sleep(1);
